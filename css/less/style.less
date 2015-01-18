@@ -1,6 +1,8 @@
 @bg: #262626;
 @primary: #D6D6D6;
 @secondary: #979797;
+@light: #d8d8d8;
+@gold: #FACB60;
 @green: #50E3C2;
 @height: 600px;
 @border: 5px;
@@ -51,9 +53,42 @@ html, body {
             button {
                 &#scrollToStage{
                     float: left;
+                    display: block;
+                    font-size: 12pt;
+                    margin: 25px;
+                    background-color: @bg;
+                    color: @green;
+                    border: 1px solid @green;
+                    padding: 5px 14px;
+                    border-radius: 14px;
+                    cursor: pointer;
+                    transition: 0.2s all linear;
+
+                    &:hover {
+                        background-color: @green;
+                        color: @bg;
+                    }
                 }
-                &#search{}
-                &#user{}
+
+                &#search,&#user{
+                    height: 80px;
+                    background-color: @bg;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    outline: 0;
+                    background-position: 50% 50%;
+                    background-repeat: no-repeat;
+                    width: 80px;
+                    float: right;
+                }
+                &#search {
+                    background-image: url("../img/search.png");
+                }
+                &#user {
+                    margin-right: 20px;
+                    background-image: url("../img/profile.png");
+                }
             }
         }
 
@@ -85,6 +120,7 @@ html, body {
                 }
                 
                 div { 
+                    cursor: pointer;
                     background-color: white;
                     height: 100px;
                     display: block;
@@ -95,12 +131,22 @@ html, body {
                     &#selected,&:hover,&:active {
                         color: white;
                         background-color: rgba(80, 227, 194, 0.6);
+                        .circle {
+                            background-color: white;
+                            color: @green;
+                        }
                     }
 
-                    img {
+                    .circle {
                         width: 60px;
                         height: 60px;
                         border-radius: 60px;
+                        background-color: @light;
+                        font-size: 18px;
+                        display: inline-block;
+                        color: white;
+                        text-align: center;
+                        line-height: 60px;
                         margin: 20px 15px 20px 20px;
                     }
 
@@ -111,8 +157,11 @@ html, body {
                         vertical-align: top;
                         font-size: 14pt;
 
-                        h2 {
+                        h2,h3 {
                             line-height: 25px;
+                        }
+                        h3 {
+                            font-size: 11pt;
                         }
                     }
 
@@ -134,14 +183,255 @@ html, body {
                 left: 0px;
                 right: 0px;
                 border-bottom: 1px solid @secondary;
+                overflow: hidden;
+
+                #rating {
+                    vertical-align: top;
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 120px;
+                    background-color: @gold;
+                    text-align: center;
+                    display: inline-block;
+                    clear: both;
+                    margin: 40px 20px 40px 0;
+                    color: white;
+
+                    div {
+                        height: 60px;
+                        margin: 30px;
+            
+                        #percent {
+                            font-size: 26pt;
+                            display: block;
+                            line-height: 40px;
+                            font-weight: bold;
+                        }
+                        #mt {
+                            font-size: 14pt;
+                            display: block;
+                            font-weight: 300;
+                            line-height: 20px;
+                        }
+                    }
+                }
+
+                h1 {
+                    font-size: 22pt;
+                    width: 250px;
+                    margin: 65px 0;
+                    vertical-align: top;
+                    display: inline-block;
+                    line-height: 1.2;
+                    height: 70px;
+
+                    strong {
+                        font-weight: 700;
+                    }
+                }
+
+                #small {
+                    height: 90px;
+                    margin: 55px 20px;
+                    display: inline-block;
+
+                    img,#ellipse {
+                        height: 100%;
+                        width: 60px;
+                        background-color: @light;
+                        margin-right: 20px;
+                    }
+                    #ellipse {
+                        display: inline-block;
+                        line-height: 90px;
+                        color: @light;
+                        background-color: white;
+                        text-align: center;
+                        font-size: 30pt;
+                        vertical-align: top;
+                    }
+                }
+
+                #follow {
+                    display: block;
+                    float: right;
+                    font-size: 12pt;
+                    background-color: white;
+                    color: @green;
+                    border: 1px solid @green;
+                    padding: 5px 14px;
+                    margin-top: 55px;
+                    border-radius: 14px;
+                    cursor: pointer;
+                    transition: 0.2s all linear;
+
+                    &:hover {
+                        background-color: @green;
+                        color: white;
+                    }
+                }
             }
 
-            #movies{
+            #movies {
                 position: absolute;
-                top: 280px;
+                top: 200px;
                 bottom: 0px;
                 left: 0px;
                 right: 0px;
+                overflow-y: scroll;
+
+                #thin {
+                    position: absolute;
+                    height: 30px;
+                    left: 0;
+                    right: 0;
+                    margin: 25px 0;
+
+                    h1 {
+                        line-height: 30px;
+                        font-size: 14pt;
+                        display: inline-block;
+                        vertical-align: top;
+                    }
+
+                    #sort {
+                        float: right;
+                        vertical-align: top;
+                        display: inline-block;
+                        &:before,&:after {
+                            content: " "; /* 1 */
+                            display: table; /* 2 */
+                        }
+
+                        &:after {
+                            clear: both;
+                        }
+
+                        button {
+                            display: inline-block;
+                            font-size: 10pt;
+                            background-color: white;
+                            color: @green;
+                            border: 1px solid @green;
+                            padding: 5px 14px;
+                            border-top-left-radius: 14px;
+                            border-bottom-left-radius: 14px;
+                            cursor: pointer;
+                            transition: 0.2s all linear;
+
+                            &#newest {
+                                border-radius: 0;
+                                border-top-right-radius: 14px;
+                                border-bottom-right-radius: 14px;
+                            }
+
+                            &.s {
+                                background-color: @green;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                
+                ul#grid {
+                    list-style: none;
+                    overflow-y: scroll;
+                    overflow-x: hidden;
+                    position: absolute;
+                    top: 80px;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+
+                    li {
+                        margin-right: 15px;
+                        display: inline-block;
+                        padding-bottom: 80px;
+                        position: relative;
+
+                        .overlay {
+                            display: none;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            height: 360px;
+                            background-color: rgba(0, 0, 0, 0.7);
+
+                            span {
+                                height: 250px;
+                                width: 200px;
+                                color: white;
+                                padding: 20px;
+                                font-size: 16pt;
+                                line-height: 1.5;
+                                display: block;
+                            }
+
+                            .ex {
+                                width: 37px;
+                                cursor: pointer;
+                                padding: 16px;
+                                float: left;
+                                height: 37px;
+                            }
+
+                            .v {
+                                width: 37px;
+                                cursor: pointer;
+                                padding: 16px;
+                                float: right;
+                                height: 37px;
+                            }
+                        }
+
+                        img.poster {
+                            width: 240px;
+                            height: 360px;
+                            padding-bottom: 10px;
+                            display: block;
+                        }
+
+                        .ttl {
+                            font-weight: 300;
+                            height: 40px;
+                            line-height: 40px;
+
+                            h1 {
+                                vertical-align: middle;
+                                display: inline-block;
+                                font-size: 20pt;
+                            }
+                            .year {
+                                vertical-align: middle;
+                                display: inline-block;
+                                padding: 0 2px;
+                                color: @secondary;
+                                font-size: 10pt;
+                            }
+                            .tomato,.rotten {
+                                vertical-align: middle;
+                                display: inline-block;
+                                width: 16px;
+                                height: 16px;
+                                background-position: 0px 0x;
+                                background-size: 100% 100%;
+                            }
+                            .tomato {
+                                background-image: url("../img/fresh.png");
+                            }
+                            .rotten {
+                                background-image: url("../img/rotten.png");
+                            }
+                            .teeny {
+                                vertical-align: middle;
+                                display: inline-block;
+                                font-size: 10pt;
+                            }
+                        }
+                    }
+                }
+
             }
         }
     }

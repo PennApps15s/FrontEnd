@@ -65,8 +65,8 @@
             <header id="banner">
                 <button id="scrollToStage">Rate more movies</button>
                 <div id="r">
-                    <button id="search"></button>
                     <button id="user"></button>
+                    <button id="search"></button>
                 </div>
             </header>
             <aside>
@@ -74,41 +74,80 @@
                 <section class="sidebar" id="critics">
                     <header>Critics</header>
                     <div>
-                        <img src="#" class="circle">
+                        <div class="circle">85%</div>
                         <hgroup>
-                            <h2>Roger</h2>
-                            <h2>Ebert</h2>
+                            <h2>Roger Ebert</h2>
+                            <h3>The New York Times</h3>
                         </hgroup>
                     </div>
                 </section>
                 <section class="sidebar" id="community">
                     <header>In The Community</header>
                     <div>
-                        <img src="#" class="circle">
+                        <div class="circle">85%</div>
                         <hgroup>
-                            <h2>Roger</h2>
-                            <h2>Ebert</h2>
+                            <h2>Roger Ebert</h2>
+                            <h3>The New York Times</h3>
                         </hgroup>
                     </div>
                     <div id="selected">
-                        <img src="#" class="circle">
+                        <div class="circle">85%</div>
                         <hgroup>
-                            <h2>Roger</h2>
-                            <h2>Ebert</h2>
+                            <h2>Roger Ebert</h2>
+                            <h3>The New York Times</h3>
                         </hgroup>
                     </div>
                     <div>
-                        <img src="#" class="circle">
+                        <div class="circle">85%</div>
                         <hgroup>
-                            <h2>Roger</h2>
-                            <h2>Ebert</h2>
+                            <h2>Roger Ebert</h2>
+                            <h3>The New York Times</h3>
                         </hgroup>
                     </div>                
                 </section>
             </aside>
             <section id="main">
-                <header></header>
+                <header>
+                    <div id="rating">
+                        <div>
+                            <span id="percent">89%</span>
+                            <span id="mt">match</span>
+                        </div>
+                    </div>
+                    <h1><strong>Roger Ebert</strong> and <strong>you</strong> both like:</h1>
+                    <div id="small">
+                        <img src="img/her.jpg">
+                        <img src="img/her.jpg">
+                        <img src="img/her.jpg">
+                        <img src="img/her.jpg">
+                        <img src="img/her.jpg">
+                        <div id="ellipse">...</div>
+                    </div>
+                    <button id="follow">Follow</button>
+                </header>
                 <section id="movies">
+                    <div id="thin">
+                        <h1>Robert Ebert recommends:</h1>
+                        <div id="sort">
+                            <button id="highest">Highest</button><button id="newest" class="s">Newest</button>
+                        </div>
+                    </div>
+                    <ul id="grid">
+                        <?php for($i=0; $i<25; $i++) { ?><li>
+                            <div class="overlay">
+                                <span class="quote">"Lorem impsum sit ametdsfdsf sdfds dsf sf ds dsfd sf ds"</span>
+                                <img src="img/dislike_small.png" class="ex" alt="x">
+                                <img src="img/like_small.png" class="v" alt="v">
+                            </div>
+                            <img src="img/her.jpg" class="poster" alt="movie325">
+                            <span class="ttl">
+                                <h1>Her</h1>
+                                <span class="year">(2014)</span>
+                                <div class="tomato"></div>
+                                <span class="teeny">96%</span>
+                            </span>
+                        </li><?php } ?>
+                    </ul
                 </section>
             </section>
         </div>

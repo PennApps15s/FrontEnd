@@ -47,6 +47,45 @@ body #dashboard header#banner #r {
 html #dashboard header#banner button#scrollToStage,
 body #dashboard header#banner button#scrollToStage {
   float: left;
+  display: block;
+  font-size: 12pt;
+  margin: 25px;
+  background-color: #262626;
+  color: #50e3c2;
+  border: 1px solid #50e3c2;
+  padding: 5px 14px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.2s all linear;
+}
+html #dashboard header#banner button#scrollToStage:hover,
+body #dashboard header#banner button#scrollToStage:hover {
+  background-color: #50e3c2;
+  color: #262626;
+}
+html #dashboard header#banner button#search,
+body #dashboard header#banner button#search,
+html #dashboard header#banner button#user,
+body #dashboard header#banner button#user {
+  height: 80px;
+  background-color: #262626;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  width: 80px;
+  float: right;
+}
+html #dashboard header#banner button#search,
+body #dashboard header#banner button#search {
+  background-image: url("../img/search.png");
+}
+html #dashboard header#banner button#user,
+body #dashboard header#banner button#user {
+  margin-right: 20px;
+  background-image: url("../img/profile.png");
 }
 html #dashboard aside,
 body #dashboard aside {
@@ -77,6 +116,7 @@ body #dashboard aside section header {
 }
 html #dashboard aside section div,
 body #dashboard aside section div {
+  cursor: pointer;
   background-color: white;
   height: 100px;
   display: block;
@@ -93,11 +133,26 @@ body #dashboard aside section div:active {
   color: white;
   background-color: rgba(80, 227, 194, 0.6);
 }
-html #dashboard aside section div img,
-body #dashboard aside section div img {
+html #dashboard aside section div#selected .circle,
+body #dashboard aside section div#selected .circle,
+html #dashboard aside section div:hover .circle,
+body #dashboard aside section div:hover .circle,
+html #dashboard aside section div:active .circle,
+body #dashboard aside section div:active .circle {
+  background-color: white;
+  color: #50e3c2;
+}
+html #dashboard aside section div .circle,
+body #dashboard aside section div .circle {
   width: 60px;
   height: 60px;
   border-radius: 60px;
+  background-color: #d8d8d8;
+  font-size: 18px;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  line-height: 60px;
   margin: 20px 15px 20px 20px;
 }
 html #dashboard aside section div hgroup,
@@ -109,8 +164,14 @@ body #dashboard aside section div hgroup {
   font-size: 14pt;
 }
 html #dashboard aside section div hgroup h2,
-body #dashboard aside section div hgroup h2 {
+body #dashboard aside section div hgroup h2,
+html #dashboard aside section div hgroup h3,
+body #dashboard aside section div hgroup h3 {
   line-height: 25px;
+}
+html #dashboard aside section div hgroup h3,
+body #dashboard aside section div hgroup h3 {
+  font-size: 11pt;
 }
 html #dashboard section#main,
 body #dashboard section#main {
@@ -129,14 +190,272 @@ body #dashboard section#main header {
   left: 0px;
   right: 0px;
   border-bottom: 1px solid #979797;
+  overflow: hidden;
+}
+html #dashboard section#main header #rating,
+body #dashboard section#main header #rating {
+  vertical-align: top;
+  width: 120px;
+  height: 120px;
+  border-radius: 120px;
+  background-color: #facb60;
+  text-align: center;
+  display: inline-block;
+  clear: both;
+  margin: 40px 20px 40px 0;
+  color: white;
+}
+html #dashboard section#main header #rating div,
+body #dashboard section#main header #rating div {
+  height: 60px;
+  margin: 30px;
+}
+html #dashboard section#main header #rating div #percent,
+body #dashboard section#main header #rating div #percent {
+  font-size: 26pt;
+  display: block;
+  line-height: 40px;
+  font-weight: bold;
+}
+html #dashboard section#main header #rating div #mt,
+body #dashboard section#main header #rating div #mt {
+  font-size: 14pt;
+  display: block;
+  font-weight: 300;
+  line-height: 20px;
+}
+html #dashboard section#main header h1,
+body #dashboard section#main header h1 {
+  font-size: 22pt;
+  width: 250px;
+  margin: 65px 0;
+  vertical-align: top;
+  display: inline-block;
+  line-height: 1.2;
+  height: 70px;
+}
+html #dashboard section#main header h1 strong,
+body #dashboard section#main header h1 strong {
+  font-weight: 700;
+}
+html #dashboard section#main header #small,
+body #dashboard section#main header #small {
+  height: 90px;
+  margin: 55px 20px;
+  display: inline-block;
+}
+html #dashboard section#main header #small img,
+body #dashboard section#main header #small img,
+html #dashboard section#main header #small #ellipse,
+body #dashboard section#main header #small #ellipse {
+  height: 100%;
+  width: 60px;
+  background-color: #d8d8d8;
+  margin-right: 20px;
+}
+html #dashboard section#main header #small #ellipse,
+body #dashboard section#main header #small #ellipse {
+  display: inline-block;
+  line-height: 90px;
+  color: #d8d8d8;
+  background-color: white;
+  text-align: center;
+  font-size: 30pt;
+  vertical-align: top;
+}
+html #dashboard section#main header #follow,
+body #dashboard section#main header #follow {
+  display: block;
+  float: right;
+  font-size: 12pt;
+  background-color: white;
+  color: #50e3c2;
+  border: 1px solid #50e3c2;
+  padding: 5px 14px;
+  margin-top: 55px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.2s all linear;
+}
+html #dashboard section#main header #follow:hover,
+body #dashboard section#main header #follow:hover {
+  background-color: #50e3c2;
+  color: white;
 }
 html #dashboard section#main #movies,
 body #dashboard section#main #movies {
   position: absolute;
-  top: 280px;
+  top: 200px;
   bottom: 0px;
   left: 0px;
   right: 0px;
+  overflow-y: scroll;
+}
+html #dashboard section#main #movies #thin,
+body #dashboard section#main #movies #thin {
+  position: absolute;
+  height: 30px;
+  left: 0;
+  right: 0;
+  margin: 25px 0;
+}
+html #dashboard section#main #movies #thin h1,
+body #dashboard section#main #movies #thin h1 {
+  line-height: 30px;
+  font-size: 14pt;
+  display: inline-block;
+  vertical-align: top;
+}
+html #dashboard section#main #movies #thin #sort,
+body #dashboard section#main #movies #thin #sort {
+  float: right;
+  vertical-align: top;
+  display: inline-block;
+}
+html #dashboard section#main #movies #thin #sort:before,
+body #dashboard section#main #movies #thin #sort:before,
+html #dashboard section#main #movies #thin #sort:after,
+body #dashboard section#main #movies #thin #sort:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+html #dashboard section#main #movies #thin #sort:after,
+body #dashboard section#main #movies #thin #sort:after {
+  clear: both;
+}
+html #dashboard section#main #movies #thin #sort button,
+body #dashboard section#main #movies #thin #sort button {
+  display: inline-block;
+  font-size: 10pt;
+  background-color: white;
+  color: #50e3c2;
+  border: 1px solid #50e3c2;
+  padding: 5px 14px;
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+  cursor: pointer;
+  transition: 0.2s all linear;
+}
+html #dashboard section#main #movies #thin #sort button#newest,
+body #dashboard section#main #movies #thin #sort button#newest {
+  border-radius: 0;
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+html #dashboard section#main #movies #thin #sort button.s,
+body #dashboard section#main #movies #thin #sort button.s {
+  background-color: #50e3c2;
+  color: white;
+}
+html #dashboard section#main #movies ul#grid,
+body #dashboard section#main #movies ul#grid {
+  list-style: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+html #dashboard section#main #movies ul#grid li,
+body #dashboard section#main #movies ul#grid li {
+  margin-right: 15px;
+  display: inline-block;
+  padding-bottom: 80px;
+  position: relative;
+}
+html #dashboard section#main #movies ul#grid li .overlay,
+body #dashboard section#main #movies ul#grid li .overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 360px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+html #dashboard section#main #movies ul#grid li .overlay span,
+body #dashboard section#main #movies ul#grid li .overlay span {
+  height: 250px;
+  width: 200px;
+  color: white;
+  padding: 20px;
+  font-size: 16pt;
+  line-height: 1.5;
+  display: block;
+}
+html #dashboard section#main #movies ul#grid li .overlay .ex,
+body #dashboard section#main #movies ul#grid li .overlay .ex {
+  width: 37px;
+  cursor: pointer;
+  padding: 16px;
+  float: left;
+  height: 37px;
+}
+html #dashboard section#main #movies ul#grid li .overlay .v,
+body #dashboard section#main #movies ul#grid li .overlay .v {
+  width: 37px;
+  cursor: pointer;
+  padding: 16px;
+  float: right;
+  height: 37px;
+}
+html #dashboard section#main #movies ul#grid li img.poster,
+body #dashboard section#main #movies ul#grid li img.poster {
+  width: 240px;
+  height: 360px;
+  padding-bottom: 10px;
+  display: block;
+}
+html #dashboard section#main #movies ul#grid li .ttl,
+body #dashboard section#main #movies ul#grid li .ttl {
+  font-weight: 300;
+  height: 40px;
+  line-height: 40px;
+}
+html #dashboard section#main #movies ul#grid li .ttl h1,
+body #dashboard section#main #movies ul#grid li .ttl h1 {
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 20pt;
+}
+html #dashboard section#main #movies ul#grid li .ttl .year,
+body #dashboard section#main #movies ul#grid li .ttl .year {
+  vertical-align: middle;
+  display: inline-block;
+  padding: 0 2px;
+  color: #979797;
+  font-size: 10pt;
+}
+html #dashboard section#main #movies ul#grid li .ttl .tomato,
+body #dashboard section#main #movies ul#grid li .ttl .tomato,
+html #dashboard section#main #movies ul#grid li .ttl .rotten,
+body #dashboard section#main #movies ul#grid li .ttl .rotten {
+  vertical-align: middle;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-position: 0px 0x;
+  background-size: 100% 100%;
+}
+html #dashboard section#main #movies ul#grid li .ttl .tomato,
+body #dashboard section#main #movies ul#grid li .ttl .tomato {
+  background-image: url("../img/fresh.png");
+}
+html #dashboard section#main #movies ul#grid li .ttl .rotten,
+body #dashboard section#main #movies ul#grid li .ttl .rotten {
+  background-image: url("../img/rotten.png");
+}
+html #dashboard section#main #movies ul#grid li .ttl .teeny,
+body #dashboard section#main #movies ul#grid li .ttl .teeny {
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 10pt;
 }
 html #stage,
 body #stage {
