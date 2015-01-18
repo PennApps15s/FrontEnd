@@ -9,12 +9,16 @@
   $(function() { 
     itemWidth = $("#0").width();
 
+    $("#rb").click(right);
     $(document).bind('keyup', 'right', right);
 
+    $("#lb").click(left);
     $(document).bind('keyup', 'left', left);
 
+    $("#up button").click(like);
     $(document).bind('keyup', 'up', like);
 
+    $("#down button").click(dislike);
     $(document).bind('keyup', 'down', dislike);
 
     $(document).bind('keyup', 'return', s2d);
