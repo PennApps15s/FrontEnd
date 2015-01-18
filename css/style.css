@@ -2,8 +2,12 @@ html,
 body {
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
-  overflow: scroll;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+html :focus,
+body :focus {
+  outline-color: transparent;
+  outline-style: none;
 }
 html .hidden,
 body .hidden {
@@ -13,23 +17,26 @@ html #dashboard,
 body #dashboard {
   width: 100%;
   height: 100%;
-  background-color: gray;
+  background-color: white;
+  display: none;
 }
 html #stage,
 body #stage {
+  overflow-x: hidden;
   width: 100%;
   height: 100%;
   background-color: #262626;
 }
 html #stage #carousel,
 body #stage #carousel {
-  position: relative;
-  top: 200px;
+  margin-bottom: 100px;
   bottom: 0;
   min-width: 100%;
   height: 610px;
   overflow-y: hidden;
   text-align: left;
+  clear: right;
+  display: block;
 }
 html #stage #carousel .item,
 body #stage #carousel .item {
@@ -88,4 +95,206 @@ body #stage #carousel .item .dark {
   background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100%;
+}
+html #stage #controls,
+body #stage #controls {
+  display: block;
+  position: relative;
+  height: 100px;
+  margin: 70px 0;
+  width: 100%;
+  clear: both;
+}
+html #stage #controls button,
+body #stage #controls button {
+  float: left;
+  height: 38px;
+  width: 38px;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  margin-right: 15px;
+  background-repeat: no-repeat;
+  content: '';
+  opacity: 0.5;
+  font-size: 0pt;
+  cursor: pointer;
+  transition: 0.2s all linear;
+}
+html #stage #controls button:hover,
+body #stage #controls button:hover {
+  opacity: 1;
+}
+html #stage #controls span,
+body #stage #controls span {
+  float: left;
+  display: block;
+  line-height: 38px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: left;
+  clear: right;
+  transition: 0.2s all linear;
+}
+html #stage #controls #left,
+body #stage #controls #left {
+  padding-top: 20px;
+  float: left;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+}
+html #stage #controls #left span,
+body #stage #controls #left span {
+  float: right;
+}
+html #stage #controls #left button,
+body #stage #controls #left button {
+  float: right;
+  background-image: url("../img/key_left.png");
+}
+html #stage #controls #left button.active,
+body #stage #controls #left button.active,
+html #stage #controls #left button :active,
+body #stage #controls #left button :active {
+  background-image: url("../img/key_left_active.png");
+}
+html #stage #controls #left:hover button,
+body #stage #controls #left:hover button,
+html #stage #controls #left.white button,
+body #stage #controls #left.white button {
+  opacity: 1;
+}
+html #stage #controls #left:hover span,
+body #stage #controls #left:hover span,
+html #stage #controls #left.white span,
+body #stage #controls #left.white span {
+  color: white;
+}
+html #stage #controls #center,
+body #stage #controls #center {
+  text-align: center;
+  width: 150px;
+  margin: 0 auto;
+}
+html #stage #controls #center #up,
+body #stage #controls #center #up {
+  padding-top: 7px;
+  height: 38px;
+  display: block;
+}
+html #stage #controls #center #up button,
+body #stage #controls #center #up button {
+  background-image: url("../img/key_up.png");
+}
+html #stage #controls #center #up button.active,
+body #stage #controls #center #up button.active,
+html #stage #controls #center #up button :active,
+body #stage #controls #center #up button :active {
+  background-image: url("../img/key_up_active.png");
+}
+html #stage #controls #center #up:hover button,
+body #stage #controls #center #up:hover button,
+html #stage #controls #center #up.white button,
+body #stage #controls #center #up.white button {
+  opacity: 1;
+}
+html #stage #controls #center #up:hover span,
+body #stage #controls #center #up:hover span,
+html #stage #controls #center #up.white span,
+body #stage #controls #center #up.white span {
+  color: white;
+}
+html #stage #controls #center #down,
+body #stage #controls #center #down {
+  height: 38px;
+  margin-top: 10px;
+  display: block;
+}
+html #stage #controls #center #down button,
+body #stage #controls #center #down button {
+  background-image: url("../img/key_down.png");
+}
+html #stage #controls #center #down button.active,
+body #stage #controls #center #down button.active,
+html #stage #controls #center #down button :active,
+body #stage #controls #center #down button :active {
+  background-image: url("../img/key_down_active.png");
+}
+html #stage #controls #center #down:hover button,
+body #stage #controls #center #down:hover button,
+html #stage #controls #center #down.white button,
+body #stage #controls #center #down.white button {
+  opacity: 1;
+}
+html #stage #controls #center #down:hover span,
+body #stage #controls #center #down:hover span,
+html #stage #controls #center #down.white span,
+body #stage #controls #center #down.white span {
+  color: white;
+}
+html #stage #controls #right,
+body #stage #controls #right {
+  padding-top: 20px;
+  float: left;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  float: right;
+}
+html #stage #controls #right button,
+body #stage #controls #right button {
+  margin: 0;
+  margin-left: 15px;
+  background-image: url("../img/key_right.png");
+}
+html #stage #controls #right button.active,
+body #stage #controls #right button.active,
+html #stage #controls #right button :active,
+body #stage #controls #right button :active {
+  background-image: url("../img/key_right_active.png");
+}
+html #stage #controls #right span,
+body #stage #controls #right span {
+  text-align: right;
+}
+html #stage #controls #right:hover button,
+body #stage #controls #right:hover button,
+html #stage #controls #right.white button,
+body #stage #controls #right.white button {
+  opacity: 1;
+}
+html #stage #controls #right:hover span,
+body #stage #controls #right:hover span,
+html #stage #controls #right.white span,
+body #stage #controls #right.white span {
+  color: white;
+}
+html #stage #done,
+body #stage #done {
+  width: 100%;
+  text-align: center;
+  font-size: 12pt;
+  color: #50e3c2;
+}
+html #stage #done #scrollToDash,
+body #stage #done #scrollToDash {
+  font-size: 12pt;
+  background-color: #262626;
+  color: #50e3c2;
+  border: 1px solid #50e3c2;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s all linear;
+}
+html #stage #done #scrollToDash:hover,
+body #stage #done #scrollToDash:hover {
+  background-color: #50e3c2;
+  outline: none;
+  color: #262626;
 }
