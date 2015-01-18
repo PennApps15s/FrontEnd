@@ -10,16 +10,14 @@
     itemWidth = $("#0").width();
 
     $(document).bind('keyup', 'right', right);
-    $(document).bind('keyup', 'd', right);
 
     $(document).bind('keyup', 'left', left);
-    $(document).bind('keyup', 'a', left);
 
-    $(document).bind('keyup', 'return', like);
     $(document).bind('keyup', 'up', like);
 
-    $(document).bind('keyup', 'backspace', dislike);
     $(document).bind('keyup', 'down', dislike);
+
+    $(document).bind('keyup', 'return', s2d);
 
     itemMargin = $("#0").css("margin-right");
 
@@ -33,23 +31,27 @@
         layout();
     });
 
-    $('#scrollToStage').click(function() {
-      $("#stage").prependTo("body").slideDown(700, function() {
-        $("#dashboard").hide();
-      });   
-    });
+    $('#scrollToStage').click(s2s);
 
-    $('#scrollToDash').click(function() {
-      $("#dashboard").show();
-
-      $('html,body').animate({
-        scrollTop: $("#dashboard").offset().top
-      }, 700, function() {
-        $("#stage").hide();
-      });
-    });
+    $('#scrollToDash').click(s2d);
 
   });
+
+  function s2s() {
+    $("#stage").prependTo("body").slideDown(700, function() {
+      $("#dashboard").hide();
+    });   
+  }
+
+  function s2d() {
+    $("#dashboard").show();
+
+    $('html,body').animate({
+      scrollTop: $("#dashboard").offset().top
+    }, 700, function() {
+      $("#stage").hide();
+    });
+  }
 
   function layout() {
     $("#dashboard").height($(window).height());

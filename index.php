@@ -61,7 +61,6 @@
         </div>
 
         <div id="dashboard">
-        hey
             <header><button id="scrollToStage">Rate Movies</button></header>
         </div>
 
