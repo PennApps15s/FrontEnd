@@ -334,7 +334,7 @@ html, body {
                     }
                 }
                 
-                ul#grid {
+                ul.grid {
                     list-style: none;
                     overflow-y: scroll;
                     overflow-x: hidden;
@@ -343,6 +343,7 @@ html, body {
                     left: 0;
                     right: 0;
                     bottom: 0;
+                    transition: 0.5s opacity linear;
 
                     li {
                         margin-right: 15px;
@@ -430,6 +431,13 @@ html, body {
                                 font-size: 10pt;
                             }
                         }
+                    }
+                    
+                    &.hidden{
+                        opacity: 0;
+                    }
+                    &.shown{
+                        opacity: 1;
                     }
                 }
 
