@@ -20,25 +20,25 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div id="stage">
-            
+            <hr/>
             <div id="controls">
                 <div id="left">
                     <span>Go Back</span>
-                    <button id="lb">left</button>
+                    <button id="lb"></button>
                 </div>
                 <div id="center">
                     <div id="up">
-                        <button>up</button>
+                        <button></button>
                         <span>Like</span>
                     </div>
                     <div id="down">
-                        <button>down</button>
+                        <button></button>
                         <span>Down</span>
                     </div>
                 </div>
                 <div id="right">
                     <span>Skip</span>
-                    <button id="rb">right</button>
+                    <button id="rb"></button>
                 </div>
             </div>
 
@@ -61,7 +61,56 @@
         </div>
 
         <div id="dashboard">
-            <header><button id="scrollToStage">Rate Movies</button></header>
+            <hr/>
+            <header id="banner">
+                <button id="scrollToStage">Rate more movies</button>
+                <div id="r">
+                    <button id="search"></button>
+                    <button id="user"></button>
+                </div>
+            </header>
+            <aside>
+                <header id="t">People who share your taste in movies</header>
+                <section class="sidebar" id="critics">
+                    <header>Critics</header>
+                    <div>
+                        <img src="#" class="circle">
+                        <hgroup>
+                            <h2>Roger</h2>
+                            <h2>Ebert</h2>
+                        </hgroup>
+                    </div>
+                </section>
+                <section class="sidebar" id="community">
+                    <header>In The Community</header>
+                    <div>
+                        <img src="#" class="circle">
+                        <hgroup>
+                            <h2>Roger</h2>
+                            <h2>Ebert</h2>
+                        </hgroup>
+                    </div>
+                    <div id="selected">
+                        <img src="#" class="circle">
+                        <hgroup>
+                            <h2>Roger</h2>
+                            <h2>Ebert</h2>
+                        </hgroup>
+                    </div>
+                    <div>
+                        <img src="#" class="circle">
+                        <hgroup>
+                            <h2>Roger</h2>
+                            <h2>Ebert</h2>
+                        </hgroup>
+                    </div>                
+                </section>
+            </aside>
+            <section id="main">
+                <header></header>
+                <section id="movies">
+                </section>
+            </section>
         </div>
 
 
